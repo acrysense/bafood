@@ -1,0 +1,119 @@
+// variables
+$primary-font-family: 'Noto Sans', sans-serif; // body font-family
+$primary-font-size: 16px; // body font-size
+$primary-line-height: 1.3; // body line-height
+$primary-color: #333333;
+$dark-color: #2C4657;
+$white-color: #FFFFFF;
+$light-white-color: #F2F3F7;
+$accent-color: #EA8E75;
+$blue-color: #0075FF;
+$dark-grey-color: #585858;
+$grey-color: #8E8E96;
+
+// common document styles - tags
+body {
+	position: relative;
+	overflow-x: hidden;
+    font-family: $primary-font-family;
+    font-size: $primary-font-size;
+    line-height: $primary-line-height;
+    color: $primary-color;
+}
+
+ul,
+ol,
+li {
+	display: block;
+	padding: 0;
+	margin: 0;
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+    font-weight: normal;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    display: inline-block;
+    color: $primary-color;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        text-decoration: none;
+        color: $accent-color;
+    }
+    &:active {
+        color: $accent-color;
+    }
+}
+
+picture {
+    display: block;
+}
+
+img {
+    max-width: 100%;
+}
+
+svg {
+    transition: all 0.3s ease-in-out;
+}
+
+// common document styles - class
+.scroll-disabled {
+    overflow: hidden;
+}
+
+.container {
+    padding: 0 50px;
+	margin: 0 auto;
+    max-width: 1400px;
+    width: 100%;
+
+    @media screen and (max-width: 767px) {
+        padding: 0 15px;
+    }
+}
+
+.btn {
+    display: block;
+    padding: 21px;
+    min-width: 330px;
+    width: fit-content;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    color: $white-color;
+    background: $dark-color;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    &:focus {
+        outline: none;
+        background: rgba($dark-color, 0.9);
+    }
+    &:hover {
+        color: $white-color;
+        background: rgba($dark-color, 0.9);
+    }
+    &:active {
+        color: $white-color;
+    }
+
+    @media screen and (max-width: 575px) {
+        min-width: 100%;
+    }
+}
+
+.app-btn {
+    display: block;
+    border: none;
+    &__icon {
+        width: 180px;
+        height: 60px;
+    }
+}

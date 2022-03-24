@@ -1,0 +1,135 @@
+.popup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    &--active {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: all;
+        .popup {
+            &__wrapper {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            &__overlay {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+    &__wrapper {
+        position: relative;
+        z-index: 2;
+        transform: translateY(104%);
+        padding: 42px 30px 40px;
+        max-width: 500px;
+        width: 100%;
+        opacity: 0;
+        background: $white-color;
+        border-radius: 24px;
+        box-shadow: 0px 12px 30px rgba(11, 44, 102, 0.07);
+        transition: all 0.3s ease;
+
+        @media screen and (max-width: 767px) {
+            padding: 42px 20px 30px;
+            max-width: 90%;
+        }
+    }
+    &__close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        min-width: 32px;
+        width: 32px;
+        height: 32px;
+        background: $light-white-color;
+        border: none;
+        border-radius: 50%;
+        transition: all 0.3s ease-in-out;
+        &:focus {
+            outline: none;
+            svg {
+                color: $primary-color;
+            }
+        }
+        &:hover {
+            svg {
+                color: $primary-color;
+            }
+        }
+    }
+    &__icon {
+        width: 8px;
+        height: 8px;
+        color: $dark-color;
+    }
+    &__top {
+        padding-bottom: 20px;
+        text-align: center;
+    }
+    &__title {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    &__description {
+        font-size: 16px;
+        font-weight: normal;
+        color: $dark-grey-color;
+        a {
+            color: $blue-color;
+        }
+        span {
+            color: $primary-color;
+        }
+    }
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px 20px 0;
+
+        @media screen and (max-width: 767px) {
+            flex-direction: column;
+        }
+    }
+    &__btn {
+        max-width: 180px;
+        width: 100%;
+    }
+    &__btn + &__btn {
+        @media screen and (max-width: 767px) {
+            margin-top: 20px;
+        }
+    }
+    &__overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(50px);
+        transition: all 0.3s ease;
+    }
+}
